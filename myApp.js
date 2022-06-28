@@ -5,10 +5,14 @@ console.log("Hello World")
 
 app.get("/", function(req, res) {
     res.send('Hello Express');
+    res.send(__dirname);
 })
 
 
-
+app.get("/", function(req, res) {
+    absolutePath = __dirname + "/view"
+    res.sendFile()
+})
 
 
 
