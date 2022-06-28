@@ -8,13 +8,8 @@ app.get("/", function(req, res) {
 })
 
 app.get("/", function(req, res) {
-    res.send(__dirname);
-})
-
-
-app.get("/", function(req, res) {
-    absolutePath = __dirname + "/view"
-    res.sendFile()
+    absolutePath = __dirname + "/view/index.html"
+    res.sendFile(absolutePath)
 })
 
 
