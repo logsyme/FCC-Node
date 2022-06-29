@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+const mySecret = process.env['MESSAGE_STYLE']
 
 console.log("Hello World")
 
@@ -15,7 +16,7 @@ app.get("/json", function(req, res) {
     data = {
         "message": "Hello json"
     }
-    process.env['MESSAGE_STYLE'] == "uppercase" ? res.json(data.toUpperCase()) : res.json(data)
+    mySecret == "uppercase" ? res.json(data) : res.json(data)
 })
 
 
