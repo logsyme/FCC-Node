@@ -4,6 +4,11 @@ const mySecret = process.env['MESSAGE_STYLE']
 
 console.log("Hello World")
 
+app.use(function(req, res, next){
+    console.log(req.method + "" + req.path + " - " + req.ip)
+    next()
+})
+
 app.get("/", function(req, res) {
    // res.send('Hello Express');
     absolutePath = __dirname + "/views/index.html";
