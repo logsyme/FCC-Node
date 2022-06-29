@@ -12,7 +12,7 @@ app.get("/", function(req, res) {
    // res.send('Hello Express');
     absolutePath = __dirname + "/views/index.html";
     res.sendFile(absolutePath);
-})
+});
 
 app.use("/public", express.static(__dirname + "/public"));
 
@@ -25,7 +25,6 @@ app.get("/json", function(req, res) {
 
 app.get("/now", function(req, res, next){
     req.time = new Date().toString();
-    console.log(req.time)
     next();
 }, function(req, res) {
     data = {"time": req.time};
@@ -33,7 +32,10 @@ app.get("/now", function(req, res, next){
 });
 
 
-
+app.get("/:word/echo", function(req, res, next){
+    data = {"echo": req.params.word};
+    res.json(data);
+});
 
 
 
