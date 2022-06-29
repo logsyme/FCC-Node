@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-const mySecret = process.eng['MESSAGE_STYLE']
+const mySecret = process.env['MESSAGE_STYLE']
 
 console.log("Hello World")
 
