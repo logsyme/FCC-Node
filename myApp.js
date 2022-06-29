@@ -14,11 +14,8 @@ app.use("/public", express.static(__dirname + "/public"))
 
 
 app.get("/json", function(req, res) {
-    data = {
-        "message": "Hello json"
-    }
-    mySecret == "uppercase" ? res.json(data.toUpperCase()) : res.json(data)
-  
+    mySecret == "uppercase" ? data={"message": "HELLO JSON"} : data={"message": "Hello json"}
+    res.json(data)
 })
 
 
