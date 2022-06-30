@@ -45,7 +45,7 @@ app.route("/name").get(function(req, res, next){
     res.json(data);
     next();
 }).post(function(req, res, next){
-    data = {"names": req.body.first + " " + req.body.last};
+    data = {"name": req.body.first + " " + req.body.last};
     res.json(data);
     next();
 })
